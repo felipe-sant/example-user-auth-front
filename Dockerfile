@@ -12,7 +12,7 @@ ENV WATCHPACK_POLLING=true
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
 
 FROM node:20-alpine AS builder
 
