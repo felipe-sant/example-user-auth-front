@@ -1,3 +1,19 @@
+FROM node:20-alpine AS dev
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
+
 FROM node:20-alpine AS builder
 
 WORKDIR /app
